@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cangpindashuju
+  name: cangpindashuju
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cangpindashuju
+  template:
+    metadata:
+      labels:
+        app: cangpindashuju
+    spec:
+#      nodeName: master-02
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projests:cangpindashujuv1.0
+        name: cangpindashuju
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3010
+        - containerPort: 8083

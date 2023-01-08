@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: shujuzhili
+  name: shujuzhili
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shujuzhili
+  template:
+    metadata:
+      labels:
+        app: shujuzhili
+    spec:
+#      nodeName: master-02
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:shujuzhiliv1.0
+        name: shujuzhili
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8002
+        - containerPort: 9527

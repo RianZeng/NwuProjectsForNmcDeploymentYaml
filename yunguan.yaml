@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: yunguan
+  name: yunguan
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yunguan
+  template:
+    metadata:
+      labels:
+        app: yunguan
+    spec:
+#      nodeName: node-01
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yunguanv1.0.0
+        name: yunguan
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10017

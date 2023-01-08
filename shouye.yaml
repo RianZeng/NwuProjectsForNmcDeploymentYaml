@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: shouye
+  name: shouye
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shouye
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: shouye
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:shouyev1.0
+        name: shouye
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        - containerPort: 3010

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bangongliucheng
+  name: bangongliucheng
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bangongliucheng
+  template:
+    metadata:
+      labels:
+        app: bangongliucheng
+    spec:
+#      nodeName: master-01
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:bangongliuchengv1.0
+        name: bangongliucheng
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3010
+        - containerPort: 8085

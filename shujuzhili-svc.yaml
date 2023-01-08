@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: shujuzhili
+  name: shujuzhili
+  namespace:nwu
+spec:
+  ports:
+  - port: 8002
+    name: shujuzhiliback
+    protocol: TCP
+    targetPort: 8002
+    nodePort: 10010
+  - port: 9527
+    name: shujuzhilifront
+    protocol: TCP
+    targetPort: 9527
+    nodePort: 10009
+  selector:
+    app: shujuzhili
+  type: NodePort

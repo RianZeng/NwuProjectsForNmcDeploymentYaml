@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: yonghuzhenbie
+  name: yonghuzhenbie
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yonghuzhenbie
+  template:
+    metadata:
+      labels:
+        app: yonghuzhenbie
+    spec:
+#      nodeName: master-01
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yonghuzhenbiev1.0
+        name: yonghuzhenbie
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8082
+        - containerPort: 3000

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: cangpindashuju
+  name: cangpindashuju
+  namespace: nwu
+spec:
+  ports:
+  - port: 8083
+    name: cangpindashujuback
+    protocol: TCP
+    targetPort: 8083
+    nodePort: 10012
+  - port: 3010
+    name: cangpindashujufront
+    protocol: TCP
+    targetPort: 3010
+    nodePort: 10011
+  selector:
+    app: cangpindashuju
+  type: NodePort

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: wenwuzhengji
+  name: wenwuzhengji
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wenwuzhengji
+  template:
+    metadata:
+      labels:
+        app: wenwuzhengji
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:wenwuzhengjiv1.0
+        name: wenwuzhengji
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8085
+        - containerPort: 3010

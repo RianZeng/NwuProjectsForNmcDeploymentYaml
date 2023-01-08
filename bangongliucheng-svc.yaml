@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bangongliucheng
+  name: bangongliucheng
+  namespace: nwu
+spec:
+  ports:
+  - port: 8085
+    name: bangongliuchengback
+    protocol: TCP
+    targetPort: 8085
+    nodePort: 10006
+  - port: 3010
+    name: bangongliuchengfront
+    protocol: TCP
+    targetPort: 3010
+    nodePort: 10005
+  selector:
+    app: bangongliucheng
+  type: NodePort

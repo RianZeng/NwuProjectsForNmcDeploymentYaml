@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: shouye
+  name: shouye
+  namespace: nwu
+spec:
+  ports:
+  - port: 8080
+    name: shouyeback
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 10002
+  - port: 3010
+    name: shouyefront
+    protocol: TCP
+    targetPort: 3010
+    nodePort: 10001
+  selector:
+    app: shouye
+  type: NodePort
