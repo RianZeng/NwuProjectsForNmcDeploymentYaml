@@ -7,10 +7,10 @@ metadata:
   namespace: nwu
 spec:
   ports:
-  - port: 8085
+  - port: 8082
     name: wenwuzhengjiback
     protocol: TCP
-    targetPort: 8085
+    targetPort: 8082
     nodePort: 10008
   - port: 3010
     name: wenwuzhengjifront
