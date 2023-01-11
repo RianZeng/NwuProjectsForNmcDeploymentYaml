@@ -18,8 +18,11 @@ spec:
     spec:
 #      nodeName: master-03
       containers:
-      - image: nacos:1.4.3
-        name: shouye
+      - image: nacos/nacos-server:1.4.0
+        name: nacos
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8848
+        envFrom:
+        - configMapRef
+          name: nacos
