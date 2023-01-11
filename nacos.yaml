@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nacos
+  name: nacos
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nacos
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nacos
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: nacos:1.4.3
+        name: shouye
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8848
