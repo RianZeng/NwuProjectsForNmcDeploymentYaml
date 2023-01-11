@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: collectionbase
+  name: collectionbase
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: collectionbase
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: collectionbase
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:collectionbasev1.0
+        name: collectionbase
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8029
