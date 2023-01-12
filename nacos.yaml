@@ -18,11 +18,11 @@ spec:
     spec:
 #      nodeName: master-03
       containers:
-      - image: nacos/nacos-server:1.4.0
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:nacosv1.3.2
         name: nacos
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8848
-        envFrom:
-        - configMapRef:
-          name: nacos
+#        envFrom:
+#        - configMapRef:
+#          name: nacos

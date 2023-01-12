@@ -11,7 +11,7 @@ spec:
     name: nacos
     protocol: TCP
     targetPort: 8848
-    nodePort: 10016
+    nodePort: 10018
   selector:
     app: nacos
   type: NodePort
