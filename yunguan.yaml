@@ -17,7 +17,7 @@ spec:
     spec:
 #      nodeName: node-01
       containers:
-      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yunguanv1.0.0
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yunguanv1.0
         name: yunguan
         imagePullPolicy: Always
         ports:

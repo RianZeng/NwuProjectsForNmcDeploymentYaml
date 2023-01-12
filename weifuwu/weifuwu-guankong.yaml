@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: weifuwu-guankongfront
+  name: weifuwu-guankongfront
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weifuwu-guankongfront
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: weifuwu-guankongfront
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:weifuwu-guankongfrontv1.0
+        name: weifuwu-guankongfront
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: weifuwu-guankongback
+  name: weifuwu-guankongback
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weifuwu-guankongback
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: weifuwu-guankongback
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:weifuwu-guankongbackv1.0
+        name: weifuwu-guankongback
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8002

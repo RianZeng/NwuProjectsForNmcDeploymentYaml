@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: weifuwu-wangguan
+  name: weifuwu-wangguan
+  namespace: nwu
+spec:
+  ports:
+  - port: 8050
+    name: weifuwu-wangguan
+    protocol: TCP
+    targetPort: 8050
+    nodePort: 10014
+  selector:
+    app: weifuwu-wangguan
+  type: NodePort

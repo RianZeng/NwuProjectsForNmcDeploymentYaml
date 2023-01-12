@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: weifuwu-financialmanagementsystem
+  name: weifuwu-financialmanagementsystem
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weifuwu-financialmanagementsystem
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: weifuwu-financialmanagementsystem
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:weifuwu-financialmanagementsystemv1.0
+        name: weifuwu-financialmanagementsystem
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8012
+#        envFrom:
+#        - configMapRef:
+#            name: nacos

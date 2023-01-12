@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: weifuwu-guankongfront
+  name: weifuwu-guankongfront
+  namespace: nwu
+spec:
+  ports:
+  - port: 8080
+    name: weifuwu-guankongfront
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 10015
+  selector:
+    app: weifuwu-guankongfront
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: weifuwu-guankongback
+  name: weifuwu-guankongback
+  namespace: nwu
+spec:
+  ports:
+  - port: 8002
+    name: weifuwu-guankongback
+    protocol: TCP
+    targetPort: 8002
+    nodePort: 10016
+  selector:
+    app: weifuwu-guankongback
+  type: NodePort

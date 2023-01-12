@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: weifuwu-menhu
+  name: weifuwu-menhu
+  namespace: nwu
+spec:
+  ports:
+  - port: 4000
+    name: weifuwu-menhu
+    protocol: TCP
+    targetPort: 4000
+    nodePort: 10013
+  selector:
+    app: weifuwu-menhu
+  type: NodePort
