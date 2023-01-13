@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: weifuwu-redis
+  name: weifuwu-redis
+  namespace: nwu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weifuwu-redis
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: weifuwu-redis
+    spec:
+#      nodeName: master-03
+      containers:
+      - image: redis:6.2.6
+        name: weifuwu-redis
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 6379
+#        envFrom:
+#        - configMapRef:
+#            name: nacos

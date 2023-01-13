@@ -9,7 +9,9 @@ kubectl apply -f weifuwu-nacos-svc.yaml &
 kubectl apply -f weifuwu-menhu-svc.yaml &
 kubectl apply -f weifuwu-guankong-svc.yaml &
 
-kubectl apply -f weifuwu-nacos-configmap.yaml
+kubectl apply -f weifuwu-nacos-configmap.yaml &
+kubectl apply -f weifuwu-redis.yaml &
+kubectl apply -f weifuwu-redis-svc.yaml
 
 
 
