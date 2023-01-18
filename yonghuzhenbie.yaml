@@ -15,9 +15,9 @@ spec:
       labels:
         app: yonghuzhenbie
     spec:
-#      nodeName: master-01
+      nodeName: nmc-cloud-node5.com
       containers:
-      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yonghuzhenbiev1.0
+      - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yonghuzhenbiev1.1
         name: yonghuzhenbie
         imagePullPolicy: Always
         ports:
