@@ -15,7 +15,7 @@ spec:
       labels:
         app: yonghuzhenbie
     spec:
-      nodeName: nmc-cloud-node5.com
+#      nodeName: nmc-cloud-node5.com
       containers:
       - image: registry.cn-hangzhou.aliyuncs.com/rian_ns/nwu_projects:yonghuzhenbiev1.1
         name: yonghuzhenbie
